@@ -9701,20 +9701,20 @@ void main(void) {
                 printf("        close hairless\r\n");
                 printf("    Launch PuTTY and reconnect to the VCOM port\r\n");
 
-                pitch = 35;
+                pitch = 1;
                 instrument = 0;
                 while(PORTAbits.RA2 == 1);
                 while(PORTAbits.RA3 != 0) {
 
-                    noteOn(0x99, pitch, 105);
+                    noteOn(0x90, pitch, 105);
                     TMR0_WriteTimer(TMR0_ReadTimer() + 0xFFFF - 50000);
                     INTCONbits.TMR0IF = 0;
                     while (TMR0_HasOverflowOccured() == 0);
                     noteOn(0x80, pitch, 105);
 
                     pitch = pitch + 1;
-                    if (pitch > 81) {
-                        pitch = 35;
+                    if (pitch > 128) {
+                        pitch = 1;
                         instrument = (instrument + 8) & 0x7F;
                         putByteSCI(0xC0);
                         putByteSCI(instrument);

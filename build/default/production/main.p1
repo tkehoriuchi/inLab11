@@ -1440,8 +1440,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 245:                 printf("    Launch PuTTY and reconnect to the VCOM port\r\n");
 [e ( _printf :s 57C ]
 "247
-[; ;main.c: 247:                 pitch = 35;
-[e = _pitch -> -> 35 `i `uc ]
+[; ;main.c: 247:                 pitch = 1;
+[e = _pitch -> -> 1 `i `uc ]
 "248
 [; ;main.c: 248:                 instrument = 0;
 [e = _instrument -> -> 0 `i `uc ]
@@ -1458,8 +1458,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 917 ]
 {
 "252
-[; ;main.c: 252:                     noteOn(0x99, pitch, 105);
-[e ( _noteOn (3 , , -> -> 153 `i `uc _pitch -> -> 105 `i `uc ]
+[; ;main.c: 252:                     noteOn(0x90, pitch, 105);
+[e ( _noteOn (3 , , -> -> 144 `i `uc _pitch -> -> 105 `i `uc ]
 "253
 [; ;main.c: 253:                     TMR0_WriteTimer(TMR0_ReadTimer() + 0xFFFF - 50000);
 [e ( _TMR0_WriteTimer (1 -> - -> + -> ( _TMR0_ReadTimer ..  `ui -> 65535 `ui `l -> 50000 `l `us ]
@@ -1480,12 +1480,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 258:                     pitch = pitch + 1;
 [e = _pitch -> + -> _pitch `i -> 1 `i `uc ]
 "259
-[; ;main.c: 259:                     if (pitch > 81) {
-[e $ ! > -> _pitch `i -> 81 `i 922  ]
+[; ;main.c: 259:                     if (pitch > 128) {
+[e $ ! > -> _pitch `i -> 128 `i 922  ]
 {
 "260
-[; ;main.c: 260:                         pitch = 35;
-[e = _pitch -> -> 35 `i `uc ]
+[; ;main.c: 260:                         pitch = 1;
+[e = _pitch -> -> 1 `i `uc ]
 "261
 [; ;main.c: 261:                         instrument = (instrument + 8) & 0x7F;
 [e = _instrument -> & + -> _instrument `i -> 8 `i -> 127 `i `uc ]

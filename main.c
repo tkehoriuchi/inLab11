@@ -22,7 +22,7 @@
 #pragma warning disable 1498
 
 //NOTE FUNCTIONS
-#define PLAYNOTE        0x99 
+#define PLAYNOTE        0x90 // 0x99 for percussion
 #define NOTEOFF         0x80
 #define PLAYINSTRUMENT  0xC0
 
@@ -244,7 +244,7 @@ void main(void) {
                 printf("        close hairless\r\n");
                 printf("    Launch PuTTY and reconnect to the VCOM port\r\n");
                 
-                pitch = 35;
+                pitch = 1;    //start at pitch = 35 for percussion
                 instrument = 0;
                 while(TOP_BUTTON_GetValue() == 1);
                 while(BOTTOM_BUTTON_GetValue() != 0) {
@@ -256,8 +256,8 @@ void main(void) {
                     noteOn(NOTEOFF, pitch, 105);
 
                     pitch = pitch + 1;
-                    if (pitch > 81) {    
-                        pitch = 35;
+                    if (pitch > 128) {   //pitch > 81 for percussion    
+                        pitch = 1;  //rollover again to 35 for percussion
                         instrument = (instrument + 8) & 0x7F;
                         putByteSCI(PLAYINSTRUMENT);
                         putByteSCI(instrument);
