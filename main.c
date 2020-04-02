@@ -207,7 +207,12 @@ void main(void) {
                 // is above the calibrated pressed value plus delta.
                 i=0;
 			// put some code here.  I needed 2 lines of code,
-
+                for (i = 0; i < N; i++) {
+                    if (sample[i] < (nominalHallPressed + delta)) {
+                        break;                        
+                    }
+                }
+                
                 printf("key velocity = %d\r\n",i);
                 break;                               
                 

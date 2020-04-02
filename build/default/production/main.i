@@ -9664,6 +9664,11 @@ void main(void) {
 # 208 "main.c"
                 i=0;
 
+                for (i = 0; i < 64; i++) {
+                    if (sample[i] < (nominalHallPressed + delta)) {
+                        break;
+                    }
+                }
 
                 printf("key velocity = %d\r\n",i);
                 break;

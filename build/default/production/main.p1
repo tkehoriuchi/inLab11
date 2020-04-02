@@ -1335,166 +1335,192 @@ Version 4.0 HI-TECH Software Intermediate Code
 "208
 [; ;main.c: 208:                 i=0;
 [e = _i -> -> 0 `i `uc ]
-"211
-[; ;main.c: 211:                 printf("key velocity = %d\r\n",i);
-[e ( _printf , (. :s 34C -> _i `i ]
-"212
-[; ;main.c: 212:                 break;
-[e $U 842  ]
-"217
-[; ;main.c: 217:             case 'M':
+"210
+[; ;main.c: 210:                 for (i = 0; i < 64; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 64 `i 908  ]
+[e $U 909  ]
 [e :U 908 ]
-"218
-[; ;main.c: 218:                 printf("Launch hairless-midiserial\r\n");
-[e ( _printf :s 35C ]
-"219
-[; ;main.c: 219:                 printf("In the hairless-midiserial program:\r\n");
-[e ( _printf :s 36C ]
-"220
-[; ;main.c: 220:                 printf("    File -> preferences\r\n");
-[e ( _printf :s 37C ]
-"221
-[; ;main.c: 221:                 printf("    Baud Rate:  9600\r\n");
-[e ( _printf :s 38C ]
+{
+"211
+[; ;main.c: 211:                     if (sample[i] < (nominalHallPressed + delta)) {
+[e $ ! < -> *U + &U _sample * -> _i `ux -> -> # *U &U _sample `ui `ux `i + -> _nominalHallPressed `i -> _delta `i 911  ]
+{
+"212
+[; ;main.c: 212:                         break;
+[e $U 909  ]
+"213
+[; ;main.c: 213:                     }
+}
+[e :U 911 ]
+"214
+[; ;main.c: 214:                 }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 64 `i 908  ]
+[e :U 909 ]
+}
+"216
+[; ;main.c: 216:                 printf("key velocity = %d\r\n",i);
+[e ( _printf , (. :s 34C -> _i `i ]
+"217
+[; ;main.c: 217:                 break;
+[e $U 842  ]
 "222
-[; ;main.c: 222:                 printf("    Data Bits:  8\r\n");
-[e ( _printf :s 39C ]
+[; ;main.c: 222:             case 'M':
+[e :U 912 ]
 "223
-[; ;main.c: 223:                 printf("    Parity:     None\r\n");
-[e ( _printf :s 40C ]
+[; ;main.c: 223:                 printf("Launch hairless-midiserial\r\n");
+[e ( _printf :s 35C ]
 "224
-[; ;main.c: 224:                 printf("    Stop Bit(s):    1\r\n");
-[e ( _printf :s 41C ]
+[; ;main.c: 224:                 printf("In the hairless-midiserial program:\r\n");
+[e ( _printf :s 36C ]
 "225
-[; ;main.c: 225:                 printf("    Flow Control:   None\r\n");
-[e ( _printf :s 42C ]
+[; ;main.c: 225:                 printf("    File -> preferences\r\n");
+[e ( _printf :s 37C ]
 "226
-[; ;main.c: 226:                 printf("    Click ""OK""\r\n");
-[e ( _printf :s 43C ]
+[; ;main.c: 226:                 printf("    Baud Rate:  9600\r\n");
+[e ( _printf :s 38C ]
 "227
-[; ;main.c: 227:                 printf("    Serial Port -> (Not Connected)\r\n");
-[e ( _printf :s 44C ]
+[; ;main.c: 227:                 printf("    Data Bits:  8\r\n");
+[e ( _printf :s 39C ]
 "228
-[; ;main.c: 228:                 printf("    MIDI Out -> (Not Connected)\r\n\n");
-[e ( _printf :s 45C ]
+[; ;main.c: 228:                 printf("    Parity:     None\r\n");
+[e ( _printf :s 40C ]
 "229
-[; ;main.c: 229:                 printf("When you have complete this:\r\n");
-[e ( _printf :s 46C ]
+[; ;main.c: 229:                 printf("    Stop Bit(s):    1\r\n");
+[e ( _printf :s 41C ]
 "230
-[; ;main.c: 230:                 printf("    Close out of Putty.\r\n");
-[e ( _printf :s 47C ]
+[; ;main.c: 230:                 printf("    Flow Control:   None\r\n");
+[e ( _printf :s 42C ]
 "231
-[; ;main.c: 231:                 printf("    In the hairless-midiserial program:\r\n");
-[e ( _printf :s 48C ]
+[; ;main.c: 231:                 printf("    Click ""OK""\r\n");
+[e ( _printf :s 43C ]
 "232
-[; ;main.c: 232:                 printf("        Serial Port -> USB Serial Port (COMx)\r\n");
-[e ( _printf :s 49C ]
+[; ;main.c: 232:                 printf("    Serial Port -> (Not Connected)\r\n");
+[e ( _printf :s 44C ]
 "233
-[; ;main.c: 233:                 printf("        MIDI Out -> Microsoft GS Wavetable Synth \r\n");
-[e ( _printf :s 50C ]
+[; ;main.c: 233:                 printf("    MIDI Out -> (Not Connected)\r\n\n");
+[e ( _printf :s 45C ]
 "234
-[; ;main.c: 234:                 printf("    Press upper push button on Dev'18 to start MIDI play sequence\r\n");
-[e ( _printf :s 51C ]
+[; ;main.c: 234:                 printf("When you have complete this:\r\n");
+[e ( _printf :s 46C ]
 "235
-[; ;main.c: 235:                 printf("    Press lower push button on Dev'18 to exit MIDI play sequence\r\n");
-[e ( _printf :s 52C ]
+[; ;main.c: 235:                 printf("    Close out of Putty.\r\n");
+[e ( _printf :s 47C ]
 "236
 [; ;main.c: 236:                 printf("    In the hairless-midiserial program:\r\n");
-[e ( _printf :s 53C ]
+[e ( _printf :s 48C ]
 "237
-[; ;main.c: 237:                 printf("        Serial Port -> (Not Connected)\r\n");
-[e ( _printf :s 54C ]
+[; ;main.c: 237:                 printf("        Serial Port -> USB Serial Port (COMx)\r\n");
+[e ( _printf :s 49C ]
 "238
-[; ;main.c: 238:                 printf("        MIDI Out -> (Not Connected)\r\n");
-[e ( _printf :s 55C ]
+[; ;main.c: 238:                 printf("        MIDI Out -> Microsoft GS Wavetable Synth \r\n");
+[e ( _printf :s 50C ]
 "239
-[; ;main.c: 239:                 printf("        close hairless\r\n");
-[e ( _printf :s 56C ]
+[; ;main.c: 239:                 printf("    Press upper push button on Dev'18 to start MIDI play sequence\r\n");
+[e ( _printf :s 51C ]
 "240
-[; ;main.c: 240:                 printf("    Launch PuTTY and reconnect to the VCOM port\r\n");
-[e ( _printf :s 57C ]
+[; ;main.c: 240:                 printf("    Press lower push button on Dev'18 to exit MIDI play sequence\r\n");
+[e ( _printf :s 52C ]
+"241
+[; ;main.c: 241:                 printf("    In the hairless-midiserial program:\r\n");
+[e ( _printf :s 53C ]
 "242
-[; ;main.c: 242:                 pitch=64;
-[e = _pitch -> -> 64 `i `uc ]
+[; ;main.c: 242:                 printf("        Serial Port -> (Not Connected)\r\n");
+[e ( _printf :s 54C ]
 "243
-[; ;main.c: 243:                 instrument = 0;
-[e = _instrument -> -> 0 `i `uc ]
+[; ;main.c: 243:                 printf("        MIDI Out -> (Not Connected)\r\n");
+[e ( _printf :s 55C ]
 "244
-[; ;main.c: 244:                 while(PORTAbits.RA2 == 1);
-[e $U 909  ]
-[e :U 910 ]
-[e :U 909 ]
-[e $ == -> . . _PORTAbits 0 2 `i -> 1 `i 910  ]
-[e :U 911 ]
+[; ;main.c: 244:                 printf("        close hairless\r\n");
+[e ( _printf :s 56C ]
 "245
-[; ;main.c: 245:                 while(PORTAbits.RA3 != 0) {
-[e $U 912  ]
-[e :U 913 ]
-{
+[; ;main.c: 245:                 printf("    Launch PuTTY and reconnect to the VCOM port\r\n");
+[e ( _printf :s 57C ]
 "247
-[; ;main.c: 247:                     noteOn(0x90, pitch, 105);
-[e ( _noteOn (3 , , -> -> 144 `i `uc _pitch -> -> 105 `i `uc ]
-"248
-[; ;main.c: 248:                     TMR0_WriteTimer(TMR0_ReadTimer() + 0xFFFF - 50000);
-[e ( _TMR0_WriteTimer (1 -> - -> + -> ( _TMR0_ReadTimer ..  `ui -> 65535 `ui `l -> 50000 `l `us ]
-"249
-[; ;main.c: 249:                     INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"250
-[; ;main.c: 250:                     while (TMR0_HasOverflowOccured() == 0);
-[e $U 915  ]
-[e :U 916 ]
-[e :U 915 ]
-[e $ == -> ( _TMR0_HasOverflowOccured ..  `i -> 0 `i 916  ]
-[e :U 917 ]
-"251
-[; ;main.c: 251:                     noteOn(0x80, pitch, 105);
-[e ( _noteOn (3 , , -> -> 128 `i `uc _pitch -> -> 105 `i `uc ]
-"253
-[; ;main.c: 253:                     pitch = pitch + 1;
-[e = _pitch -> + -> _pitch `i -> 1 `i `uc ]
-"254
-[; ;main.c: 254:                     if (pitch > 76) {
-[e $ ! > -> _pitch `i -> 76 `i 918  ]
-{
-"255
-[; ;main.c: 255:                         pitch = 64;
+[; ;main.c: 247:                 pitch=64;
 [e = _pitch -> -> 64 `i `uc ]
-"256
-[; ;main.c: 256:                         instrument = (instrument + 8) & 0x7F;
-[e = _instrument -> & + -> _instrument `i -> 8 `i -> 127 `i `uc ]
-"257
-[; ;main.c: 257:                         putByteSCI(0xC0);
-[e ( _putByteSCI (1 -> -> 192 `i `uc ]
-"258
-[; ;main.c: 258:                         putByteSCI(instrument);
-[e ( _putByteSCI (1 _instrument ]
-"259
-[; ;main.c: 259:                     }
-}
-[e :U 918 ]
-"260
-[; ;main.c: 260:                 }
-}
-[e :U 912 ]
-"245
-[; ;main.c: 245:                 while(PORTAbits.RA3 != 0) {
-[e $ != -> . . _PORTAbits 0 3 `i -> 0 `i 913  ]
+"248
+[; ;main.c: 248:                 instrument = 0;
+[e = _instrument -> -> 0 `i `uc ]
+"249
+[; ;main.c: 249:                 while(PORTAbits.RA2 == 1);
+[e $U 913  ]
 [e :U 914 ]
-"261
-[; ;main.c: 261:                 break;
-[e $U 842  ]
-"266
-[; ;main.c: 266:    default:
+[e :U 913 ]
+[e $ == -> . . _PORTAbits 0 2 `i -> 1 `i 914  ]
+[e :U 915 ]
+"250
+[; ;main.c: 250:                 while(PORTAbits.RA3 != 0) {
+[e $U 916  ]
+[e :U 917 ]
+{
+"252
+[; ;main.c: 252:                     noteOn(0x90, pitch, 105);
+[e ( _noteOn (3 , , -> -> 144 `i `uc _pitch -> -> 105 `i `uc ]
+"253
+[; ;main.c: 253:                     TMR0_WriteTimer(TMR0_ReadTimer() + 0xFFFF - 50000);
+[e ( _TMR0_WriteTimer (1 -> - -> + -> ( _TMR0_ReadTimer ..  `ui -> 65535 `ui `l -> 50000 `l `us ]
+"254
+[; ;main.c: 254:                     INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"255
+[; ;main.c: 255:                     while (TMR0_HasOverflowOccured() == 0);
+[e $U 919  ]
+[e :U 920 ]
 [e :U 919 ]
-"267
-[; ;main.c: 267:     printf("Unknown key %c\r\n",cmd);
-[e ( _printf , (. :s 58C -> _cmd `i ]
-"268
-[; ;main.c: 268:     break;
+[e $ == -> ( _TMR0_HasOverflowOccured ..  `i -> 0 `i 920  ]
+[e :U 921 ]
+"256
+[; ;main.c: 256:                     noteOn(0x80, pitch, 105);
+[e ( _noteOn (3 , , -> -> 128 `i `uc _pitch -> -> 105 `i `uc ]
+"258
+[; ;main.c: 258:                     pitch = pitch + 1;
+[e = _pitch -> + -> _pitch `i -> 1 `i `uc ]
+"259
+[; ;main.c: 259:                     if (pitch > 76) {
+[e $ ! > -> _pitch `i -> 76 `i 922  ]
+{
+"260
+[; ;main.c: 260:                         pitch = 64;
+[e = _pitch -> -> 64 `i `uc ]
+"261
+[; ;main.c: 261:                         instrument = (instrument + 8) & 0x7F;
+[e = _instrument -> & + -> _instrument `i -> 8 `i -> 127 `i `uc ]
+"262
+[; ;main.c: 262:                         putByteSCI(0xC0);
+[e ( _putByteSCI (1 -> -> 192 `i `uc ]
+"263
+[; ;main.c: 263:                         putByteSCI(instrument);
+[e ( _putByteSCI (1 _instrument ]
+"264
+[; ;main.c: 264:                     }
+}
+[e :U 922 ]
+"265
+[; ;main.c: 265:                 }
+}
+[e :U 916 ]
+"250
+[; ;main.c: 250:                 while(PORTAbits.RA3 != 0) {
+[e $ != -> . . _PORTAbits 0 3 `i -> 0 `i 917  ]
+[e :U 918 ]
+"266
+[; ;main.c: 266:                 break;
 [e $U 842  ]
-"269
-[; ;main.c: 269:    }
+"271
+[; ;main.c: 271:    default:
+[e :U 923 ]
+"272
+[; ;main.c: 272:     printf("Unknown key %c\r\n",cmd);
+[e ( _printf , (. :s 58C -> _cmd `i ]
+"273
+[; ;main.c: 273:     break;
+[e $U 842  ]
+"274
+[; ;main.c: 274:    }
 }
 [e $U 842  ]
 [e :U 843 ]
@@ -1510,49 +1536,49 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 83 `ui `i 873
  , $ -> -> 49 `ui `i 876
  , $ -> -> 116 `ui `i 886
- , $ -> -> 77 `ui `i 908
- 919 ]
+ , $ -> -> 77 `ui `i 912
+ 923 ]
 [e :U 842 ]
-"271
-[; ;main.c: 271:   }
+"276
+[; ;main.c: 276:   }
 }
 [e :U 841 ]
-"272
-[; ;main.c: 272:     }
+"277
+[; ;main.c: 277:     }
 }
 [e $U 838  ]
 [e :U 839 ]
 }
-"273
-[; ;main.c: 273: }
+"278
+[; ;main.c: 278: }
 [e :UE 834 ]
 }
-"280
-[; ;main.c: 280: void putByteSCI(uint8_t writeByte) {
+"285
+[; ;main.c: 285: void putByteSCI(uint8_t writeByte) {
 [v _putByteSCI `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _putByteSCI ]
 [v _writeByte `uc ~T0 @X0 1 r1 ]
 [f ]
-"281
-[; ;main.c: 281:         while (PIR1bits.TX1IF == 0);
-[e $U 921  ]
-[e :U 922 ]
-[e :U 921 ]
-[e $ == -> . . _PIR1bits 0 4 `i -> 0 `i 922  ]
-[e :U 923 ]
-"282
-[; ;main.c: 282:         PIR1bits.TX1IF = 0;
+"286
+[; ;main.c: 286:         while (PIR1bits.TX1IF == 0);
+[e $U 925  ]
+[e :U 926 ]
+[e :U 925 ]
+[e $ == -> . . _PIR1bits 0 4 `i -> 0 `i 926  ]
+[e :U 927 ]
+"287
+[; ;main.c: 287:         PIR1bits.TX1IF = 0;
 [e = . . _PIR1bits 0 4 -> -> 0 `i `uc ]
-"283
-[; ;main.c: 283:         TX1REG = writeByte;
-[e = _TX1REG _writeByte ]
-"284
-[; ;main.c: 284: }
-[e :UE 920 ]
-}
 "288
-[; ;main.c: 288: void noteOn(uint8_t cmd, uint8_t pitch, uint8_t velocity) {
+[; ;main.c: 288:         TX1REG = writeByte;
+[e = _TX1REG _writeByte ]
+"289
+[; ;main.c: 289: }
+[e :UE 924 ]
+}
+"293
+[; ;main.c: 293: void noteOn(uint8_t cmd, uint8_t pitch, uint8_t velocity) {
 [v _noteOn `(v ~T0 @X0 1 ef3`uc`uc`uc ]
 {
 [e :U _noteOn ]
@@ -1560,18 +1586,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _pitch `uc ~T0 @X0 1 r2 ]
 [v _velocity `uc ~T0 @X0 1 r3 ]
 [f ]
-"289
-[; ;main.c: 289:   putByteSCI(cmd);
+"294
+[; ;main.c: 294:   putByteSCI(cmd);
 [e ( _putByteSCI (1 _cmd ]
-"290
-[; ;main.c: 290:   putByteSCI(pitch);
+"295
+[; ;main.c: 295:   putByteSCI(pitch);
 [e ( _putByteSCI (1 _pitch ]
-"291
-[; ;main.c: 291:   putByteSCI(velocity);
+"296
+[; ;main.c: 296:   putByteSCI(velocity);
 [e ( _putByteSCI (1 _velocity ]
-"292
-[; ;main.c: 292: }
-[e :UE 924 ]
+"297
+[; ;main.c: 297: }
+[e :UE 928 ]
 }
 [p f _printf 8946816 ]
 [a 24C 72 97 110 100 115 32 111 102 102 32 116 104 101 32 112 105 97 110 111 44 32 112 114 101 115 115 32 107 101 121 98 111 97 114 100 32 107 101 121 32 116 111 32 99 97 108 105 98 114 97 116 101 32 110 111 109 105 110 97 108 72 97 108 108 85 110 80 114 101 115 115 101 100 0 ]
