@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Thu Apr 02 09:54:18 2020
+                                                                                               Thu Apr 02 10:09:44 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	18F26K22
@@ -3359,8 +3359,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   3318  00F86A  6F69               	movwf	(printf@fmt+1)& (0+255),b
   3319  00F86C  EC75  F06F         	call	_printf	;wreg free
   3320  00F870                     
-  3321                           ;main.c: 247:                 pitch=64;
-  3322  00F870  0E40               	movlw	64
+  3321                           ;main.c: 247:                 pitch = 35;
+  3322  00F870  0E23               	movlw	35
   3323  00F872  0100               	movlb	0	; () banked
   3324  00F874  6FBC               	movwf	main@pitch& (0+255),b
   3325  00F876                     
@@ -3378,11 +3378,11 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   3337  00F888  EF81  F07C         	goto	l2820
   3338  00F88C                     l2798:
   3339                           
-  3340                           ;main.c: 252:                     noteOn(0x90, pitch, 105);
+  3340                           ;main.c: 252:                     noteOn(0x99, pitch, 105);
   3341  00F88C  C0BC  F002         	movff	main@pitch,noteOn@pitch
   3342  00F890  0E69               	movlw	105
   3343  00F892  6E03               	movwf	noteOn@velocity^0,c
-  3344  00F894  0E90               	movlw	144
+  3344  00F894  0E99               	movlw	153
   3345  00F896  EC03  F06F         	call	_noteOn
   3346  00F89A                     
   3347                           ;main.c: 253:                     TMR0_WriteTimer(TMR0_ReadTimer() + 0xFFFF - 50000);
@@ -3420,8 +3420,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   3379  00F8D6  6FBC               	movwf	main@pitch& (0+255),b
   3380  00F8D8                     
   3381                           ; BSR set to: 0
-  3382                           ;main.c: 259:                     if (pitch > 76) {
-  3383  00F8D8  0E4C               	movlw	76
+  3382                           ;main.c: 259:                     if (pitch > 81) {
+  3383  00F8D8  0E51               	movlw	81
   3384  00F8DA  65BC               	cpfsgt	main@pitch& (0+255),b
   3385  00F8DC  EF72  F07C         	goto	u2181
   3386  00F8E0  EF74  F07C         	goto	u2180
@@ -3430,8 +3430,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   3389  00F8E8                     u2180:
   3390  00F8E8                     
   3391                           ; BSR set to: 0
-  3392                           ;main.c: 260:                         pitch = 64;
-  3393  00F8E8  0E40               	movlw	64
+  3392                           ;main.c: 260:                         pitch = 35;
+  3393  00F8E8  0E23               	movlw	35
   3394  00F8EA  6FBC               	movwf	main@pitch& (0+255),b
   3395  00F8EC                     
   3396                           ; BSR set to: 0
@@ -8849,7 +8849,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Thu Apr 02 09:54:18 2020
+Symbol Table                                                                                   Thu Apr 02 10:09:44 2020
 
                __end_of_TMR0_HasOverflowOccured DDC6                                              l15 DF64  
                                             l24 DE9A                                              l33 DDC4  

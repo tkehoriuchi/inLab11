@@ -677,7 +677,7 @@ text38 DD40 DD43 CODE DD40 0
 %locals
 dist/default/production\inLab11.X.production.o
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f26k22.h
-C:\Users\thsid\AppData\Local\Temp\sblk.s
+C:\Users\thsid\AppData\Local\Temp\sdh4.s
 5002 DDC6 0 CODE 0
 5004 DDC6 0 CODE 0
 5007 DDC6 0 CODE 0
